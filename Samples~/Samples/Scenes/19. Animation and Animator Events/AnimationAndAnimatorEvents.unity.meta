@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 2e893d2343ef1ba40a61ca97f913f8a1
+DefaultImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 298480
+  packageName: Rukhanka Animation System 2
+  packageVersion: 2.8.0
+  assetPath: Packages/com.rukhanka.animation/Samples~/Samples/Scenes/19. Animation
+    and Animator Events/AnimationAndAnimatorEvents.unity
+  uploadId: 860362

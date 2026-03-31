@@ -1,0 +1,18 @@
+fileFormatVersion: 2
+guid: d69e8eae4edec124ba32d289cf56329a
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences: []
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 298480
+  packageName: Rukhanka Animation System 2
+  packageVersion: 2.8.0
+  assetPath: Packages/com.rukhanka.animation/Rukhanka.Toolbox/InternalAccess/Unity.Collections/CollectionsAssemblyVisibility.cs
+  uploadId: 860362

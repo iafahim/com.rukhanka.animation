@@ -1,0 +1,18 @@
+fileFormatVersion: 2
+guid: 2bf390f7f6397b04b97ae25ec7191690
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences: []
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 298480
+  packageName: Rukhanka Animation System 2
+  packageVersion: 2.8.0
+  assetPath: Packages/com.rukhanka.animation/Rukhanka.Runtime/IK/OverrideTransformIKSystem.cs
+  uploadId: 860362

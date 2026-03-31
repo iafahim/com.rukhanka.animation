@@ -1,0 +1,16 @@
+fileFormatVersion: 2
+guid: ad62a3727ae35064c9db3c79da7bb7b1
+timeCreated: 1493134673
+licenseType: Store
+NativeFormatImporter:
+  mainObjectFileID: 2100000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 298480
+  packageName: Rukhanka Animation System 2
+  packageVersion: 2.8.0
+  assetPath: Packages/com.rukhanka.animation/Samples~/Samples/SampleAssets/Spitter/Materials/Spitter_Internals_Mat.mat
+  uploadId: 860362

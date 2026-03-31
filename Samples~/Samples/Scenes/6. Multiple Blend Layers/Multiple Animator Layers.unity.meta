@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 2bd67ef3af2abb641bf43f4f68a3ad68
+DefaultImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 298480
+  packageName: Rukhanka Animation System 2
+  packageVersion: 2.8.0
+  assetPath: Packages/com.rukhanka.animation/Samples~/Samples/Scenes/6. Multiple
+    Blend Layers/Multiple Animator Layers.unity
+  uploadId: 860362

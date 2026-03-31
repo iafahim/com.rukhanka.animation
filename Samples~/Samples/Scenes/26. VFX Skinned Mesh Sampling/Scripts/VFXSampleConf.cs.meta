@@ -1,0 +1,19 @@
+fileFormatVersion: 2
+guid: 0215b30e5ec763241aa4eda5eb586e7c
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences: []
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 298480
+  packageName: Rukhanka Animation System 2
+  packageVersion: 2.8.0
+  assetPath: Packages/com.rukhanka.animation/Samples~/Samples/Scenes/26. VFX Skinned
+    Mesh Sampling/Scripts/VFXSampleConf.cs
+  uploadId: 860362

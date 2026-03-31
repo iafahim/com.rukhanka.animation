@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: 1df1990c6dd59af4284e0a4cd18d791e
+ShaderIncludeImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 298480
+  packageName: Rukhanka Animation System 2
+  packageVersion: 2.8.0
+  assetPath: Packages/com.rukhanka.animation/Rukhanka.DebugDrawer/Resources/RukhankaDebugDrawerCommon.hlsl
+  uploadId: 860362

@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 832e9238976b74f448d8c7fa7a8924e0
+DefaultImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 298480
+  packageName: Rukhanka Animation System 2
+  packageVersion: 2.8.0
+  assetPath: Packages/com.rukhanka.animation/Samples~/Samples/Scenes/24. Procedural
+    Animation/ProceduralAnimation.unity
+  uploadId: 860362

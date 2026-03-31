@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: d24425a27250f4148ac721c9e8efbeb7
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 7400000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 298480
+  packageName: Rukhanka Animation System 2
+  packageVersion: 2.8.0
+  assetPath: Packages/com.rukhanka.animation/Samples~/Samples/SampleAssets/Armature/Animations/Armature_CrouchRight.anim
+  uploadId: 860362

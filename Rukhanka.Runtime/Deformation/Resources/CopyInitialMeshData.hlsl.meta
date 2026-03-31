@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: e286f97e31bb11943af1a6b97b753b28
+ShaderIncludeImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 298480
+  packageName: Rukhanka Animation System 2
+  packageVersion: 2.8.0
+  assetPath: Packages/com.rukhanka.animation/Rukhanka.Runtime/Deformation/Resources/CopyInitialMeshData.hlsl
+  uploadId: 860362

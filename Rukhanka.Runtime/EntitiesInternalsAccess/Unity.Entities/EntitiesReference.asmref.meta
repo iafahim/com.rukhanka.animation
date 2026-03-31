@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: de5bad5f0f9b53b43b772e14d493748d
+AssemblyDefinitionReferenceImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 298480
+  packageName: Rukhanka Animation System 2
+  packageVersion: 2.8.0
+  assetPath: Packages/com.rukhanka.animation/Rukhanka.Runtime/EntitiesInternalsAccess/Unity.Entities/EntitiesReference.asmref
+  uploadId: 860362

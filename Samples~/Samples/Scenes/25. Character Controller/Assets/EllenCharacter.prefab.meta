@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 911761e3fdfe1854f8445440bf6ab0c3
+PrefabImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 298480
+  packageName: Rukhanka Animation System 2
+  packageVersion: 2.8.0
+  assetPath: Packages/com.rukhanka.animation/Samples~/Samples/Scenes/25. Character
+    Controller/Assets/EllenCharacter.prefab
+  uploadId: 860362

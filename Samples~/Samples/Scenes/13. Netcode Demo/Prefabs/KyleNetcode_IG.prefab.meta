@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: e6fb8cdb41c9af745a53204c5887cae6
+PrefabImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 298480
+  packageName: Rukhanka Animation System 2
+  packageVersion: 2.8.0
+  assetPath: Packages/com.rukhanka.animation/Samples~/Samples/Scenes/13. Netcode
+    Demo/Prefabs/KyleNetcode_IG.prefab
+  uploadId: 860362

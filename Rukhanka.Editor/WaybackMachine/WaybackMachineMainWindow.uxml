@@ -1,0 +1,14 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../../../UIElementsSchema/UIElements.xsd" editor-extension-mode="True">
+    <uie:Toolbar name="toolbar" style="height: 21px;">
+        <uie:ToolbarButton text="Preview" name="preview-btn" focusable="false" />
+        <uie:ToolbarButton name="record-btn" focusable="false" style="flex-shrink: 0; width: 25px;" />
+        <uie:ToolbarBreadcrumbs name="entity-path" />
+        <uie:ToolbarSpacer style="flex-grow: 0; width: 50px;" />
+        <uie:ToolbarButton name="import-btn" focusable="false" style="padding-left: 2px; padding-right: 2px;" />
+        <uie:ToolbarButton name="save-btn" focusable="false" style="padding-left: 2px; padding-right: 2px;" />
+        <ui:Label text="Memory size " double-click-selects-word="false" triple-click-selects-line="false" name="memorystat" style="-unity-text-align: middle-left; padding-left: 10px; flex-grow: 1;" />
+        <uie:ToolbarSpacer style="flex-grow: 1;" />
+        <ui:Label double-click-selects-word="false" triple-click-selects-line="false" name="nodebuginfowarning" style="-unity-text-align: middle-right; padding-left: 10px; flex-grow: 1;" />
+        <uie:ToolbarButton name="settings-btn" focusable="false" style="flex-shrink: 0; width: 25px;" />
+    </uie:Toolbar>
+</ui:UXML>

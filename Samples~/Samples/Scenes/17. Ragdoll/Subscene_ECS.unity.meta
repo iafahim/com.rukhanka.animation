@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: 063fa64004ebaa947ba2ee2fa1a83e31
+DefaultImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 298480
+  packageName: Rukhanka Animation System 2
+  packageVersion: 2.8.0
+  assetPath: Packages/com.rukhanka.animation/Samples~/Samples/Scenes/17. Ragdoll/Subscene_ECS.unity
+  uploadId: 860362

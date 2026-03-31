@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: 73e65cfe5708b1346962e42ce655aad5
+ShaderIncludeImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 298480
+  packageName: Rukhanka Animation System 2
+  packageVersion: 2.8.0
+  assetPath: Packages/com.rukhanka.animation/Rukhanka.Runtime/Common/Shaders/GPUStructures/AnimationClip.hlsl
+  uploadId: 860362

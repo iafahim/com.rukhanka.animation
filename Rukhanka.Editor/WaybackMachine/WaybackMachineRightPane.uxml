@@ -1,0 +1,6 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../../../UIElementsSchema/UIElements.xsd" editor-extension-mode="True">
+    <ui:VisualElement name="timeline" style="flex-shrink: 0; height: 21px; border-left-color: rgb(0, 0, 0); border-right-color: rgb(0, 0, 0); border-top-color: rgb(0, 0, 0); border-bottom-color: rgb(0, 152, 170); border-bottom-width: 1px;" />
+    <ui:Label text="Label" name="text-measurer" style="visibility: visible; display: none;" />
+    <ui:VisualElement name="content" style="flex-grow: 1; flex-direction: column-reverse; background-color: rgb(41, 41, 41);" />
+    <ui:MinMaxSlider value="0,1000" low-limit="0" high-limit="1000" name="slider" />
+</ui:UXML>

@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 1c8613ff03be61c4d99cc7c32c4a6442
+VisualEffectImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 298480
+  packageName: Rukhanka Animation System 2
+  packageVersion: 2.8.0
+  assetPath: Packages/com.rukhanka.animation/Samples~/Samples/Scenes/19. Animation
+    and Animator Events/Assets/WalkStepL.vfx
+  uploadId: 860362

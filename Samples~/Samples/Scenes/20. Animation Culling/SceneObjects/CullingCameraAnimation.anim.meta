@@ -1,0 +1,16 @@
+fileFormatVersion: 2
+guid: 9dc4e63b836245f488548b8da39afc1d
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 7400000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 298480
+  packageName: Rukhanka Animation System 2
+  packageVersion: 2.8.0
+  assetPath: Packages/com.rukhanka.animation/Samples~/Samples/Scenes/20. Animation
+    Culling/SceneObjects/CullingCameraAnimation.anim
+  uploadId: 860362

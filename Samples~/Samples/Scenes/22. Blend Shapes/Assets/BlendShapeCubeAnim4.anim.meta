@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: e1c23bae3e7be69449830f2ebdbb20dd
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 7400000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 298480
+  packageName: Rukhanka Animation System 2
+  packageVersion: 2.8.0
+  assetPath: Packages/com.rukhanka.animation/Samples~/Samples/Scenes/22. Blend Shapes/Assets/BlendShapeCubeAnim4.anim
+  uploadId: 860362

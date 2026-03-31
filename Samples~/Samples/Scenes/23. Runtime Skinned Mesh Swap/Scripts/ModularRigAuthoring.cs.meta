@@ -1,0 +1,19 @@
+fileFormatVersion: 2
+guid: 47e513d2e2aa40d45b5d220cdab2254a
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences: []
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 298480
+  packageName: Rukhanka Animation System 2
+  packageVersion: 2.8.0
+  assetPath: Packages/com.rukhanka.animation/Samples~/Samples/Scenes/23. Runtime
+    Skinned Mesh Swap/Scripts/ModularRigAuthoring.cs
+  uploadId: 860362

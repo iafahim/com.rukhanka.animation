@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 851af7b6fcc3e2445b87e34630f5ddca
+PrefabImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 298480
+  packageName: Rukhanka Animation System 2
+  packageVersion: 2.8.0
+  assetPath: Packages/com.rukhanka.animation/Samples~/Samples/Scenes/13. Netcode
+    Demo/Prefabs/EllenNetcode_PG.prefab
+  uploadId: 860362

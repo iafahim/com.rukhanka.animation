@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 47c89c9a98a00a2458a6d57d24f8bf1f
+DefaultImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 298480
+  packageName: Rukhanka Animation System 2
+  packageVersion: 2.8.0
+  assetPath: Packages/com.rukhanka.animation/Samples~/Samples/Scenes/4. BlendTree
+    Showcase/BlendTree Showcase.unity
+  uploadId: 860362

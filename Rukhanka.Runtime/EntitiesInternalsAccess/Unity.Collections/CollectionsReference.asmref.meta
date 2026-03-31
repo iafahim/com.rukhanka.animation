@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: f770603031e31474f8f396d8373465b4
+AssemblyDefinitionReferenceImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 298480
+  packageName: Rukhanka Animation System 2
+  packageVersion: 2.8.0
+  assetPath: Packages/com.rukhanka.animation/Rukhanka.Runtime/EntitiesInternalsAccess/Unity.Collections/CollectionsReference.asmref
+  uploadId: 860362

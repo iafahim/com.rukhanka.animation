@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 0a2aaed7368695e4e8827750bb7ef494
+DefaultImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 298480
+  packageName: Rukhanka Animation System 2
+  packageVersion: 2.8.0
+  assetPath: Packages/com.rukhanka.animation/Samples~/Samples/Scenes/25. Character
+    Controller/CharacterController.unity
+  uploadId: 860362

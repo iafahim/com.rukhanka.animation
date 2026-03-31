@@ -1,0 +1,18 @@
+fileFormatVersion: 2
+guid: ca54491ce25c7ac4aaffcde59986870e
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences: []
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 298480
+  packageName: Rukhanka Animation System 2
+  packageVersion: 2.8.0
+  assetPath: Packages/com.rukhanka.animation/Samples~/Samples/Scripts/UI/UIController_AnimatorOverrideController.cs
+  uploadId: 860362

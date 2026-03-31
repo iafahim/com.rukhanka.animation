@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: d94574e17e3950e408ece6781f3ecb64
+PrefabImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 298480
+  packageName: Rukhanka Animation System 2
+  packageVersion: 2.8.0
+  assetPath: Packages/com.rukhanka.animation/Samples~/Samples/Scenes/12. Stress Test/Prefabs/ChomperNoMesh_0.prefab
+  uploadId: 860362

@@ -1,0 +1,31 @@
+fileFormatVersion: 2
+guid: 73ee215c330b6424fbc77eda27bdff25
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - m_ViewDataDictionary: {instanceID: 0}
+  - windowAsset: {fileID: 9197481963319205126, guid: b8f9259b827427d4bababecc0ca4b088,
+      type: 3}
+  - leftPaneAsset: {fileID: 9197481963319205126, guid: 0625fcf33fc6f894abb1ceb8e0eed94b,
+      type: 3}
+  - rightPaneAsset: {fileID: 9197481963319205126, guid: 8e219e54165d54b47bebd4ae11ea57ac,
+      type: 3}
+  - stateInfoAsset: {fileID: 9197481963319205126, guid: ac25a97ac8035ef4aa39a33fc05a4031,
+      type: 3}
+  - eventInfoAsset: {fileID: 9197481963319205126, guid: 81d64e961a6c95b4caa6115d4ea8dc1e,
+      type: 3}
+  - animInfoAsset: {fileID: 9197481963319205126, guid: 41515e63c8fb4ad45ace42e817e8e9b2,
+      type: 3}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 298480
+  packageName: Rukhanka Animation System 2
+  packageVersion: 2.8.0
+  assetPath: Packages/com.rukhanka.animation/Rukhanka.Editor/WaybackMachine/WaybackMachineWindow.cs
+  uploadId: 860362

@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: 4000a1fb1ac3eec4fb7dfdac3670dafb
+ShaderIncludeImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 298480
+  packageName: Rukhanka Animation System 2
+  packageVersion: 2.8.0
+  assetPath: Packages/com.rukhanka.animation/Rukhanka.Runtime/GPUAnimationEngine/Resources/TrackSampler.hlsl
+  uploadId: 860362

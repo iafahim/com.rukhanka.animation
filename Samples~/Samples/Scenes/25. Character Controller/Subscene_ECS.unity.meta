@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 34738bccbb306714f80848c9a64f77c6
+DefaultImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 298480
+  packageName: Rukhanka Animation System 2
+  packageVersion: 2.8.0
+  assetPath: Packages/com.rukhanka.animation/Samples~/Samples/Scenes/25. Character
+    Controller/Subscene_ECS.unity
+  uploadId: 860362

@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 0060c403d5f65884182b0389168dc97a
+DefaultImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 298480
+  packageName: Rukhanka Animation System 2
+  packageVersion: 2.8.0
+  assetPath: Packages/com.rukhanka.animation/Samples~/Samples/Scenes/26. VFX Skinned
+    Mesh Sampling/Subscene_ECS.unity
+  uploadId: 860362

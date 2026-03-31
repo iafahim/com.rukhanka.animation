@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: a2f4338f751d23e4db39523b314244b9
+ComputeShaderImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 298480
+  packageName: Rukhanka Animation System 2
+  packageVersion: 2.8.0
+  assetPath: Packages/com.rukhanka.animation/Rukhanka.Toolbox/GPU/Resources/RukhankaGPUBufferManipulation.compute
+  uploadId: 860362

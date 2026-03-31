@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: c82cd9a4a3fa4854a9b4dd3290fd978f
+ComputeShaderImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 298480
+  packageName: Rukhanka Animation System 2
+  packageVersion: 2.8.0
+  assetPath: Packages/com.rukhanka.animation/Rukhanka.Runtime/Deformation/Resources/RukhankaMeshDeformation.compute
+  uploadId: 860362

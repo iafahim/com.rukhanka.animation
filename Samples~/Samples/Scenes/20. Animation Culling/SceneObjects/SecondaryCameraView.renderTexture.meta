@@ -1,0 +1,16 @@
+fileFormatVersion: 2
+guid: b3c5de88960ca094b9eca281bce4ca1c
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 8400000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 298480
+  packageName: Rukhanka Animation System 2
+  packageVersion: 2.8.0
+  assetPath: Packages/com.rukhanka.animation/Samples~/Samples/Scenes/20. Animation
+    Culling/SceneObjects/SecondaryCameraView.renderTexture
+  uploadId: 860362

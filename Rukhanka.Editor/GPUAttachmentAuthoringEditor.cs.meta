@@ -1,0 +1,20 @@
+fileFormatVersion: 2
+guid: 50f6f556821c439438eea2d9223d703a
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - inspectorXML: {fileID: 9197481963319205126, guid: 9e8ba628177bc4843b45c866c7016ce7,
+      type: 3}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 298480
+  packageName: Rukhanka Animation System 2
+  packageVersion: 2.8.0
+  assetPath: Packages/com.rukhanka.animation/Rukhanka.Editor/GPUAttachmentAuthoringEditor.cs
+  uploadId: 860362

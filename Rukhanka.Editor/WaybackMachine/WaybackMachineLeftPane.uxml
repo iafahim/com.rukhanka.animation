@@ -1,0 +1,17 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../../../UIElementsSchema/UIElements.xsd" editor-extension-mode="True">
+    <ui:VisualElement name="timeline" style="flex-shrink: 0; height: 21px; border-left-color: rgb(0, 0, 0); border-right-color: rgb(0, 0, 0); border-top-color: rgb(0, 0, 0); border-bottom-color: rgb(0, 152, 170); border-bottom-width: 1px;"/>
+    <ui:VisualElement name="background" style="flex-grow: 1;">
+        <ui:Label text="Events &#9660;" name="eventsheader" style="-unity-text-align: middle-center; height: 30px; font-size: 16px; background-color: rgb(41, 41, 41); flex-direction: row-reverse; padding-right: 0; padding-left: 0;">
+            <ui:Button name="settings" focusable="false" style="margin-top: 3px; margin-right: 3px; margin-bottom: 3px; margin-left: 3px; padding-right: 3px; padding-left: 3px;"/>
+        </ui:Label>
+        <ui:VisualElement name="eventsbody" style="background-color: rgba(197, 83, 83, 0); flex-shrink: 0;"/>
+        <ui:Label text="State Machine States &#9660;" name="smheader" style="-unity-text-align: middle-center; height: 30px; font-size: 16px; background-color: rgb(41, 41, 41); flex-direction: row-reverse; padding-right: 0; padding-left: 0;">
+            <ui:Button name="settings" style="display: none;"/>
+        </ui:Label>
+        <ui:VisualElement name="smbody" style="flex-grow: 0; flex-shrink: 0; background-color: rgba(172, 255, 214, 0);"/>
+        <ui:Label text="Animations &#9660;" name="animheader" style="-unity-text-align: middle-center; height: 30px; font-size: 16px; background-color: rgb(41, 41, 41); flex-direction: row-reverse; padding-right: 0; padding-left: 0;">
+            <ui:Button name="settings" focusable="false" style="margin-top: 3px; margin-right: 3px; margin-bottom: 3px; margin-left: 3px; padding-right: 3px; padding-left: 3px;"/>
+        </ui:Label>
+        <ui:VisualElement name="animbody" style="flex-grow: 0; flex-shrink: 0; background-color: rgba(172, 255, 214, 0);"/>
+    </ui:VisualElement>
+</ui:UXML>

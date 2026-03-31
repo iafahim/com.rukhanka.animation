@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: 69af9e54a44a5e242985bda098b073e0
+PrefabImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 298480
+  packageName: Rukhanka Animation System 2
+  packageVersion: 2.8.0
+  assetPath: Packages/com.rukhanka.animation/Samples~/Samples/Scenes/11. Crowd/Prefabs/SpitterCrowd_0.prefab
+  uploadId: 860362

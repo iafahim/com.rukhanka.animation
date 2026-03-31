@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 112988cedfcbda947b53b6f7e794c980
+PrefabImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 298480
+  packageName: Rukhanka Animation System 2
+  packageVersion: 2.8.0
+  assetPath: Packages/com.rukhanka.animation/Samples~/Samples/Scenes/13. Netcode
+    Demo/Prefabs/ChomperNetcode_PG.prefab
+  uploadId: 860362

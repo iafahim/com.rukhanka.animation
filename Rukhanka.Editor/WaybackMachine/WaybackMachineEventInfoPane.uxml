@@ -1,0 +1,9 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../../../UIElementsSchema/UIElements.xsd" editor-extension-mode="True">
+    <ui:VisualElement name="background" style="flex-grow: 1; visibility: visible; flex-shrink: 0;">
+        <ui:VisualElement name="eventinfo" style="flex-grow: 1; margin-left: 5px; margin-top: 5px; margin-right: 5px; margin-bottom: 5px; height: 12px; flex-direction: row; align-items: center; overflow: hidden; justify-content: space-evenly;">
+            <ui:Label text="Name" name="name" style="padding-left: 10px; flex-grow: 0; font-size: 12px; -unity-text-align: middle-left; overflow: hidden; width: 50%; -unity-font-style: bold; -unity-text-generator: standard;"/>
+            <ui:Label name="stringv" text="Value" style="padding-left: 10px; flex-grow: 0; font-size: 12px; -unity-text-align: middle-left; flex-shrink: 0; width: 50%;"/>
+        </ui:VisualElement>
+        <ui:VisualElement name="divider-low" style="flex-grow: 0; flex-shrink: 0; height: 4px; background-color: rgb(41, 41, 41);"/>
+    </ui:VisualElement>
+</ui:UXML>

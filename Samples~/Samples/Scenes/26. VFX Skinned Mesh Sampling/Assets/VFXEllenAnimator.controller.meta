@@ -1,0 +1,16 @@
+fileFormatVersion: 2
+guid: 430b77cbacb13fc44b6021a16f5f681d
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 9100000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 298480
+  packageName: Rukhanka Animation System 2
+  packageVersion: 2.8.0
+  assetPath: Packages/com.rukhanka.animation/Samples~/Samples/Scenes/26. VFX Skinned
+    Mesh Sampling/Assets/VFXEllenAnimator.controller
+  uploadId: 860362

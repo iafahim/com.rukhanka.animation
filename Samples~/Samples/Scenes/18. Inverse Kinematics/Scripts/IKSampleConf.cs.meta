@@ -1,0 +1,19 @@
+fileFormatVersion: 2
+guid: 4c68e9ca00f3efc4cb08ac4868aaaa41
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences: []
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 298480
+  packageName: Rukhanka Animation System 2
+  packageVersion: 2.8.0
+  assetPath: Packages/com.rukhanka.animation/Samples~/Samples/Scenes/18. Inverse
+    Kinematics/Scripts/IKSampleConf.cs
+  uploadId: 860362

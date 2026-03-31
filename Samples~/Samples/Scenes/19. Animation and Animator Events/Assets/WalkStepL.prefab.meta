@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 60b237b169a3d894b9d7be36ca305f23
+PrefabImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 298480
+  packageName: Rukhanka Animation System 2
+  packageVersion: 2.8.0
+  assetPath: Packages/com.rukhanka.animation/Samples~/Samples/Scenes/19. Animation
+    and Animator Events/Assets/WalkStepL.prefab
+  uploadId: 860362

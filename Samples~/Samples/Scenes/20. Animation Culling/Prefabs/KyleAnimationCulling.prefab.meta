@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 65e67e9678a83974fb2b58ba172aca45
+PrefabImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 298480
+  packageName: Rukhanka Animation System 2
+  packageVersion: 2.8.0
+  assetPath: Packages/com.rukhanka.animation/Samples~/Samples/Scenes/20. Animation
+    Culling/Prefabs/KyleAnimationCulling.prefab
+  uploadId: 860362

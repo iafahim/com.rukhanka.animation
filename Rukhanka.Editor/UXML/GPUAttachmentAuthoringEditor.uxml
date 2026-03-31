@@ -1,0 +1,3 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" editor-extension-mode="True">
+    <ui:IntegerField label="Attached Bone Index" value="-1" name="attachedBoneIndex" binding-path="attachedBoneIndex" />
+</ui:UXML>

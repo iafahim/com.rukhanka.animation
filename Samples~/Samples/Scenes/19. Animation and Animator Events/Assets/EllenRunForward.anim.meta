@@ -1,0 +1,16 @@
+fileFormatVersion: 2
+guid: adaea407e236f3342a8f6a13c9b4121e
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 7400000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 298480
+  packageName: Rukhanka Animation System 2
+  packageVersion: 2.8.0
+  assetPath: Packages/com.rukhanka.animation/Samples~/Samples/Scenes/19. Animation
+    and Animator Events/Assets/EllenRunForward.anim
+  uploadId: 860362

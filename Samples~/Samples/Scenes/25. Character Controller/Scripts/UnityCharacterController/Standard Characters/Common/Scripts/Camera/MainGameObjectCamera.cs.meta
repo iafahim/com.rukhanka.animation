@@ -1,0 +1,19 @@
+fileFormatVersion: 2
+guid: ef98a7c3224c6704d976c8bd33dfc59e
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences: []
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 298480
+  packageName: Rukhanka Animation System 2
+  packageVersion: 2.8.0
+  assetPath: Packages/com.rukhanka.animation/Samples~/Samples/Scenes/25. Character
+    Controller/Scripts/UnityCharacterController/Standard Characters/Common/Scripts/Camera/MainGameObjectCamera.cs
+  uploadId: 860362

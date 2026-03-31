@@ -1,0 +1,9 @@
+fileFormatVersion: 2
+guid: 0c11627453db5f94b9ab9c20f001b93e
+AssetOrigin:
+  serializedVersion: 1
+  productId: 298480
+  packageName: Rukhanka Animation System 2
+  packageVersion: 2.8.0
+  assetPath: Packages/com.rukhanka.animation/Rukhanka.Hybrid/IK/DynamicBoneChainBaker.cs
+  uploadId: 860362

@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: efdcd174192303044a49a7367e945c75
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 2100000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 298480
+  packageName: Rukhanka Animation System 2
+  packageVersion: 2.8.0
+  assetPath: Packages/com.rukhanka.animation/Samples~/Samples/SampleAssets/Spitter/Materials/Spitter_Body_Mat_Green.mat
+  uploadId: 860362

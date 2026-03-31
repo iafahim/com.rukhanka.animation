@@ -1,0 +1,10 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../../../UIElementsSchema/UIElements.xsd" editor-extension-mode="True">
+    <ui:VisualElement name="background" style="flex-grow: 1; flex-direction: column; margin-top: 2px; margin-right: 5px; margin-bottom: 0; margin-left: 5px;">
+        <ui:Label text="Name" name="name" style="flex-grow: 0; -unity-text-align: middle-left; overflow: hidden; -unity-font-style: bold;" />
+        <ui:VisualElement name="animinfo" style="flex-grow: 1; flex-direction: row; align-items: flex-start;">
+            <ui:Label text="Weight" name="weight" style="flex-grow: 0; font-size: 12px; -unity-text-align: middle-left; overflow: hidden; flex-shrink: 0; width: 50%;" />
+            <ui:Label text="Time" name="time" style="flex-grow: 0; font-size: 12px; -unity-text-align: middle-left; overflow: hidden; flex-shrink: 0; width: 50%;" />
+        </ui:VisualElement>
+        <ui:VisualElement name="divider" style="flex-grow: 0; flex-shrink: 0; height: 4px; background-color: rgb(41, 41, 41);" />
+    </ui:VisualElement>
+</ui:UXML>

@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 2f6fc020347b2b54884705adbc056775
+PrefabImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 298480
+  packageName: Rukhanka Animation System 2
+  packageVersion: 2.8.0
+  assetPath: Packages/com.rukhanka.animation/Samples~/Samples/SampleAssets/Robot
+    Kyle/Prefabs/Robot Kyle.prefab
+  uploadId: 860362

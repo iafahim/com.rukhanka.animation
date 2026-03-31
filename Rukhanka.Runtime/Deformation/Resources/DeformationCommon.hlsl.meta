@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: f4b5c1545ea2e514fb6d61c2b2215f6b
+ShaderIncludeImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 298480
+  packageName: Rukhanka Animation System 2
+  packageVersion: 2.8.0
+  assetPath: Packages/com.rukhanka.animation/Rukhanka.Runtime/Deformation/Resources/DeformationCommon.hlsl
+  uploadId: 860362

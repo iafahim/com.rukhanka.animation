@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 523ecaaab6756f045b3ef6f3c9cdb61e
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 7400000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 298480
+  packageName: Rukhanka Animation System 2
+  packageVersion: 2.8.0
+  assetPath: Packages/com.rukhanka.animation/Samples~/Samples/SampleAssets/Ellen/AnimationClips/EllenWalkForwardInPlace.anim
+  uploadId: 860362

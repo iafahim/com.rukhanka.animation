@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: c358aab2c5bd45b4a87248544417e7a4
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 9100000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 298480
+  packageName: Rukhanka Animation System 2
+  packageVersion: 2.8.0
+  assetPath: Packages/com.rukhanka.animation/Samples~/Samples/Scenes/7. User Curves/UserCurvesSampleAnimator.controller
+  uploadId: 860362

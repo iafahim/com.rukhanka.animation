@@ -1,0 +1,9 @@
+fileFormatVersion: 2
+guid: 7f1e853ee9ad07e4fa1e6e32a4b717c4
+AssetOrigin:
+  serializedVersion: 1
+  productId: 298480
+  packageName: Rukhanka Animation System 2
+  packageVersion: 2.8.0
+  assetPath: Packages/com.rukhanka.animation/Rukhanka.Runtime/IK/DynamicBoneChainSystem.cs
+  uploadId: 860362

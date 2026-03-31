@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 8f05276190cf498a8153f6cbe761d4e6
+timeCreated: 1480316860
+licenseType: Store
+TextScriptImporter:
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 298480
+  packageName: Rukhanka Animation System 2
+  packageVersion: 2.8.0
+  assetPath: Packages/com.rukhanka.animation/Samples~/Samples/TextMesh Pro/Sprites/EmojiOne.json
+  uploadId: 860362

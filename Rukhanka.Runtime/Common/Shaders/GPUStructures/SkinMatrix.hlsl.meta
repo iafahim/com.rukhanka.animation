@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: 73fb6e635eb45d14f89514aac00e453d
+ShaderIncludeImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 298480
+  packageName: Rukhanka Animation System 2
+  packageVersion: 2.8.0
+  assetPath: Packages/com.rukhanka.animation/Rukhanka.Runtime/Common/Shaders/GPUStructures/SkinMatrix.hlsl
+  uploadId: 860362

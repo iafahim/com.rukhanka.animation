@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: 023ecb2448de91941931e38cd915d113
+PrefabImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 298480
+  packageName: Rukhanka Animation System 2
+  packageVersion: 2.8.0
+  assetPath: Packages/com.rukhanka.animation/Samples~/Samples/SampleAssets/Armature/Prefabs/ArmatureHumanoid_Rukhanka.prefab
+  uploadId: 860362

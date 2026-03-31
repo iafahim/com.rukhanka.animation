@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: 42d320d0aebab5343b8810dafb7f4d60
+AssemblyDefinitionImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 298480
+  packageName: Rukhanka Animation System 2
+  packageVersion: 2.8.0
+  assetPath: Packages/com.rukhanka.animation/Samples~/Samples/RukhankaAnimationSamples.asmdef
+  uploadId: 860362

@@ -1,0 +1,18 @@
+fileFormatVersion: 2
+guid: e300e50212f089e4880a8ddb09cbcbc9
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences: []
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 298480
+  packageName: Rukhanka Animation System 2
+  packageVersion: 2.8.0
+  assetPath: Packages/com.rukhanka.animation/Rukhanka.Hybrid/AnimatorController/AnimatorControllerBaker_BlobBuilder.cs
+  uploadId: 860362

@@ -1,0 +1,19 @@
+fileFormatVersion: 2
+guid: ab6f5b2bbfd473c43ae2d157123c34fa
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences: []
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 298480
+  packageName: Rukhanka Animation System 2
+  packageVersion: 2.8.0
+  assetPath: Packages/com.rukhanka.animation/Samples~/Samples/Scenes/24. Procedural
+    Animation/Scripts/ProceduralAnimationsSampleConf.cs
+  uploadId: 860362

@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: cc5a9a6450e8d804d8d778c1d60d1adf
+PrefabImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 298480
+  packageName: Rukhanka Animation System 2
+  packageVersion: 2.8.0
+  assetPath: Packages/com.rukhanka.animation/Samples~/Samples/SampleAssets/Terraformer/Prefabs/TerraformerHumanoid.prefab
+  uploadId: 860362

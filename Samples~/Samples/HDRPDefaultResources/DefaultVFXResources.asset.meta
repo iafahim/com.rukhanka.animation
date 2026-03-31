@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 145290c901d58b343bdeb3b4362c9ff2
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 298480
+  packageName: Rukhanka Animation System 2
+  packageVersion: 2.8.0
+  assetPath: Packages/com.rukhanka.animation/Samples~/Samples/HDRPDefaultResources/DefaultVFXResources.asset
+  uploadId: 860362

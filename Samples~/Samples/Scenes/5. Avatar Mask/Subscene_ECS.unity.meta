@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: dfea259c38f05f348addfb20846e231f
+DefaultImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 298480
+  packageName: Rukhanka Animation System 2
+  packageVersion: 2.8.0
+  assetPath: Packages/com.rukhanka.animation/Samples~/Samples/Scenes/5. Avatar Mask/Subscene_ECS.unity
+  uploadId: 860362

@@ -1,0 +1,20 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../../../UIElementsSchema/UIElements.xsd" editor-extension-mode="True">
+    <ui:VisualElement name="background" style="flex-grow: 1; flex-direction: column; margin-top: 2px; padding-left: 5px;">
+        <ui:VisualElement name="srcstateinfo" style="flex-grow: 1; flex-direction: row; align-items: center;">
+            <ui:VisualElement name="color" style="width: 14px; height: 14px; background-color: rgb(0, 255, 0); flex-shrink: 0;" />
+            <ui:Label text="Name" name="name" style="padding-left: 10px; flex-grow: 1; font-size: 12px; -unity-text-align: middle-left; overflow: hidden; -unity-font-style: bold;" />
+            <ui:Label text="Id" name="id" style="padding-left: 10px; flex-grow: 0; font-size: 12px; -unity-text-align: middle-left; width: 30px;" />
+        </ui:VisualElement>
+        <ui:VisualElement name="dststateinfo" style="flex-grow: 1; flex-direction: row; align-items: center;">
+            <ui:VisualElement name="color" style="width: 14px; height: 14px; background-color: rgb(0, 255, 0); flex-shrink: 0;" />
+            <ui:Label text="Name" name="name" style="padding-left: 10px; flex-grow: 1; font-size: 12px; -unity-text-align: middle-left; overflow: hidden; -unity-font-style: bold;" />
+            <ui:Label text="Id" name="id" style="padding-left: 10px; flex-grow: 0; font-size: 12px; -unity-text-align: middle-left; width: 30px;" />
+        </ui:VisualElement>
+        <ui:VisualElement name="transitioninfo" style="flex-grow: 1; flex-direction: row;">
+            <ui:VisualElement name="color" style="width: 14px; height: 14px; background-color: rgba(0, 255, 0, 0); flex-shrink: 0;" />
+            <ui:Label text="Name" name="name" style="padding-left: 10px; flex-grow: 1; font-size: 12px; -unity-text-align: middle-left; overflow: hidden; -unity-font-style: bold;" />
+            <ui:Label text="Id" name="id" style="padding-left: 10px; flex-grow: 0; font-size: 12px; -unity-text-align: middle-left; width: 30px;" />
+        </ui:VisualElement>
+        <ui:VisualElement name="divider" style="flex-grow: 0; flex-shrink: 0; height: 4px; background-color: rgb(41, 41, 41);" />
+    </ui:VisualElement>
+</ui:UXML>

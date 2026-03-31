@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 492a184cc1501fe4da86d69b5eddc366
+PrefabImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 298480
+  packageName: Rukhanka Animation System 2
+  packageVersion: 2.8.0
+  assetPath: Packages/com.rukhanka.animation/Samples~/Samples/Scenes/25. Character
+    Controller/Scripts/UnityCharacterController/Standard Characters/ThirdPerson/Prefabs/OrbitCamera.prefab
+  uploadId: 860362

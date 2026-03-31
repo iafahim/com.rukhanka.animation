@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: b3da0895509ba5a44b90be032bfb9819
+ShaderIncludeImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 298480
+  packageName: Rukhanka Animation System 2
+  packageVersion: 2.8.0
+  assetPath: Packages/com.rukhanka.animation/Rukhanka.Runtime/Deformation/Resources/CopyInitialMeshBlendShapes.hlsl
+  uploadId: 860362

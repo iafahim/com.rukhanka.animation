@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: d65c1f7b116e0934db43a89dc0d3e55c
+PrefabImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 298480
+  packageName: Rukhanka Animation System 2
+  packageVersion: 2.8.0
+  assetPath: Packages/com.rukhanka.animation/Samples~/Samples/Scenes/26. VFX Skinned
+    Mesh Sampling/Assets/Ellen_Rukhanka.prefab
+  uploadId: 860362

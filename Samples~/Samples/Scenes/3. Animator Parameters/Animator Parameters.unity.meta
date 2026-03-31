@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: f73e48546dbe1694f8126ce7654dd9e1
+DefaultImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 298480
+  packageName: Rukhanka Animation System 2
+  packageVersion: 2.8.0
+  assetPath: Packages/com.rukhanka.animation/Samples~/Samples/Scenes/3. Animator
+    Parameters/Animator Parameters.unity
+  uploadId: 860362
