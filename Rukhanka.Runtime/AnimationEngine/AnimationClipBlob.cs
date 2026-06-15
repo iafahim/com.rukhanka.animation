@@ -133,6 +133,62 @@ public struct TrackSet
 
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
+//	Foot IK goal (BovineLabs Timeline foot-IK, Option A2): the left/right foot bone pose
+//	sampled at bake time in HIPS-RELATIVE space. At runtime, when AnimationToProcessComponent
+//	.applyFootIK is set, FootIKSystem solves each leg (TwoBoneIK) so the foot reaches this goal,
+//	keeping the foot where the source animation placed it (no retarget slide/float). This is a
+//	coordinate space WE control, sidestepping Unity's opaque normalized goal-curve space.
+public struct FootIKGoalSample
+{
+	public BoneTransform leftFoot;
+	public BoneTransform rightFoot;
+}
+
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+public struct FootIKGoalSet
+{
+	//	Evenly spaced over the clip: sample i covers normalized time i / (count - 1).
+	public BlobArray<FootIKGoalSample> samples;
+	//	True only for humanoid clips where both feet (and hips) resolved at bake time.
+	public bool isValid;
+
+	//	normalizedTime in [0,1]. Caller is responsible for fractioning looped clips.
+	public FootIKGoalSample Sample(float normalizedTime)
+	{
+		var n = samples.Length;
+		if (n == 0)
+			return default;
+		if (n == 1)
+			return samples[0];
+
+		var t = math.saturate(normalizedTime) * (n - 1);
+		var i0 = (int)math.floor(t);
+		var i1 = math.min(i0 + 1, n - 1);
+		var f = t - i0;
+
+		var a = samples[i0];
+		var b = samples[i1];
+		return new FootIKGoalSample
+		{
+			leftFoot = LerpBoneTransform(a.leftFoot, b.leftFoot, f),
+			rightFoot = LerpBoneTransform(a.rightFoot, b.rightFoot, f),
+		};
+	}
+
+	static BoneTransform LerpBoneTransform(in BoneTransform a, in BoneTransform b, float f)
+	{
+		return new BoneTransform
+		{
+			pos = math.lerp(a.pos, b.pos, f),
+			rot = math.slerp(a.rot, b.rot, f),
+			scale = math.lerp(a.scale, b.scale, f),
+		};
+	}
+}
+
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
 public struct AnimationClipBlob: GenericAssetBlob
 {
 #if RUKHANKA_DEBUG_INFO
@@ -147,6 +203,8 @@ public struct AnimationClipBlob: GenericAssetBlob
 	public TrackSet clipTracks;
 	public TrackSet additiveReferencePoseFrame;
 	public BlobArray<AnimationEventBlob> events;
+	//	Foot IK goals sampled in hips-relative space (Option A2). isValid only for humanoid clips.
+	public FootIKGoalSet footIKGoals;
 	
 	public uint flags;
 	public float cycleOffset;

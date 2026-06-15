@@ -614,6 +614,70 @@ public partial class AnimationClipBaker
 
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
+	//	Foot IK (Option A2): sample the left/right foot bone pose in HIPS-RELATIVE space across the
+	//	clip so the runtime FootIKSystem can solve the legs to it. Humanoid clips only; others store
+	//	zero samples + isValid=false so the runtime solver skips them at no cost.
+	void BakeFootIKGoals(BlobBuilder bb, ref FootIKGoalSet outGoals, AnimationClip ac, Animator anm)
+	{
+		var avatar    = anm != null ? anm.avatar : null;
+		var hips      = avatar != null && avatar.isHuman ? anm.GetBoneTransform(HumanBodyBones.Hips)      : null;
+		var leftFoot  = hips != null ? anm.GetBoneTransform(HumanBodyBones.LeftFoot)  : null;
+		var rightFoot = hips != null ? anm.GetBoneTransform(HumanBodyBones.RightFoot) : null;
+
+		if (hips == null || leftFoot == null || rightFoot == null)
+		{
+			bb.Allocate(ref outGoals.samples, 0);
+			outGoals.isValid = false;
+			return;
+		}
+
+		var keysList = CreateKeyframeTimes(ac.length, 1 / 60.0f, -1);
+
+		//	Mirror SampleUnityAnimation: drive the clip directly with controller/culling/root neutralized.
+		var rac            = anm.runtimeAnimatorController;
+		var origPos        = anm.transform.position;
+		var origRot        = anm.transform.rotation;
+		var origRootMotion = anm.applyRootMotion;
+		var prevAnmCulling = anm.cullingMode;
+
+		anm.runtimeAnimatorController = null;
+		anm.cullingMode = AnimatorCullingMode.AlwaysAnimate;
+		anm.applyRootMotion = true;
+		anm.transform.position = Vector3.zero;
+		anm.transform.rotation = quaternion.identity;
+
+		var samples = bb.Allocate(ref outGoals.samples, keysList.Length);
+		for (var i = 0; i < keysList.Length; ++i)
+		{
+			ac.SampleAnimation(anm.gameObject, keysList[i]);
+
+			var invHips = BoneTransform.Inverse(MakeWorld(hips));
+			samples[i] = new FootIKGoalSample
+			{
+				leftFoot  = BoneTransform.Multiply(invHips, MakeWorld(leftFoot)),
+				rightFoot = BoneTransform.Multiply(invHips, MakeWorld(rightFoot)),
+			};
+		}
+
+		anm.cullingMode = prevAnmCulling;
+		anm.runtimeAnimatorController = rac;
+		anm.transform.position = origPos;
+		anm.transform.rotation = origRot;
+		anm.applyRootMotion = origRootMotion;
+
+		keysList.Dispose();
+		outGoals.isValid = true;
+
+		static BoneTransform MakeWorld(Transform t) => new BoneTransform
+		{
+			pos = t.position,
+			rot = t.rotation,
+			scale = new float3(1, 1, 1),
+		};
+	}
+
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
 	public BlobAssetReference<AnimationClipBlob> CreateAnimationBlobAsset(AnimationClip ac, Animator animator, Hash128 animationHash)
 	{
 		var avatar = animator?.avatar;
@@ -638,6 +702,9 @@ public partial class AnimationClipBaker
 		BakeTrackSet(bb, ref rv.clipTracks, out var maxTrackKeyframeLength, -1, ac, animator, avatar);
 		if (acSettings.additiveReferencePoseClip != null)
 			BakeTrackSet(bb, ref rv.additiveReferencePoseFrame, out _, acSettings.additiveReferencePoseTime, acSettings.additiveReferencePoseClip, animator, avatar);
+
+		//	Foot IK (Option A2) goal sampling. Must run while the animator copy is still alive.
+		BakeFootIKGoals(bb, ref rv.footIKGoals, ac, animator);
 		
 	#if RUKHANKA_DEBUG_INFO
 		var dt = Time.realtimeSinceStartupAsDouble - startTimeMarker;
