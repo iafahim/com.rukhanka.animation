@@ -6,6 +6,8 @@ using Unity.Collections;
 using Unity.Collections.LowLevel.Unsafe;
 using UnityEditor;
 using UnityEngine;
+using UnityEngine.Playables;
+using UnityEngine.Animations;
 using System.Linq;
 using Rukhanka.Hybrid.RTP;
 using Rukhanka.Toolbox;
@@ -329,7 +331,7 @@ public partial class AnimationClipBaker
 
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-	unsafe void SampleUnityAnimation(AnimationClip ac, Animator anm, ValueTuple<Transform, uint>[] trs, bool applyRootMotion, float frameTime)
+	unsafe void SampleUnityAnimation(AnimationClip ac, Animator anm, ValueTuple<Transform, uint>[] trs, bool applyRootMotion, float frameTime, bool applyFootIK = false)
 	{
 		if (trs.Length == 0)
 			return;
@@ -359,7 +361,21 @@ public partial class AnimationClipBaker
 		anm.applyRootMotion = true;
 		anm.transform.position = Vector3.zero;
 		anm.transform.rotation = quaternion.identity;
-		
+
+		//	When baking foot IK, drive the pose through a PlayableGraph with SetApplyFootIK(true)
+		//	so the sampled leg-bone local rotations already include Unity's foot-IK correction.
+		PlayableGraph footIKGraph = default;
+		AnimationClipPlayable footIKPlayable = default;
+		if (applyFootIK)
+		{
+			footIKGraph = PlayableGraph.Create("Rukhanka.FootIKBake");
+			footIKGraph.SetTimeUpdateMode(DirectorUpdateMode.Manual);
+			var footIKOutput = AnimationPlayableOutput.Create(footIKGraph, "FootIK", anm);
+			footIKPlayable = AnimationClipPlayable.Create(footIKGraph, ac);
+			footIKPlayable.SetApplyFootIK(true);
+			footIKOutput.SetSourcePlayable(footIKPlayable);
+		}
+
 		var newTracks = new NativeArray<Track>(tracks.Length * trs.Length, Allocator.Temp);
 		for (int k = 0; k < newTracks.Length; ++k)
 		{
@@ -375,7 +391,15 @@ public partial class AnimationClipBaker
 		for (int i = 0; i < keysList.Length; ++i)
 		{
 			var time = keysList[i];
-			ac.SampleAnimation(anm.gameObject, time);
+			if (applyFootIK)
+			{
+				footIKPlayable.SetTime(time);
+				footIKGraph.Evaluate(0f);
+			}
+			else
+			{
+				ac.SampleAnimation(anm.gameObject, time);
+			}
 
 			for (int l = 0; l < trs.Length; ++l)
 			{
@@ -411,6 +435,9 @@ public partial class AnimationClipBaker
 			var trackKeyFrames = new Span<KeyFrame>(keyFramesList.GetUnsafePtr() + nt.keyFrameRange.x, nt.keyFrameRange.y);
 			ComputeTangents(trackKeyFrames);
 		}
+
+		if (applyFootIK && footIKGraph.IsValid())
+			footIKGraph.Destroy();
 
 		anm.cullingMode = prevAnmCulling;
 		anm.runtimeAnimatorController = rac;
@@ -464,8 +491,46 @@ public partial class AnimationClipBaker
 		trs.Add(rootBoneTransformData);
 		
 		SampleUnityAnimation(ac, anm, trs.ToArray(), true, frameTime);
+
+		//	Bake the foot-IK-corrected leg chain (Unity humanoid "Foot IK"). These replace the
+		//	muscle leg curves skipped in BakeTrackSet, so they append fresh (no group override).
+		if (anm.avatar != null && anm.avatar.isHuman && frameTime < 0)
+		{
+			var legTrs = new List<ValueTuple<Transform, uint>>();
+			foreach (var hb in footIKLegBones)
+			{
+				var bt = anm.GetBoneTransform(hb);
+				if (bt != null)
+					legTrs.Add((bt, new FixedStringName(bt.name).CalculateHash32()));
+			}
+			if (legTrs.Count > 0)
+				SampleUnityAnimation(ac, anm, legTrs.ToArray(), false, frameTime, true);
+		}
 	}
-	
+
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+	static readonly HumanBodyBones[] footIKLegBones =
+	{
+		HumanBodyBones.LeftUpperLeg, HumanBodyBones.LeftLowerLeg, HumanBodyBones.LeftFoot,
+		HumanBodyBones.RightUpperLeg, HumanBodyBones.RightLowerLeg, HumanBodyBones.RightFoot,
+	};
+
+	//	Bones whose muscle curves Foot IK will replace this bake (humanoid main clip only).
+	HashSet<string> GetFootIKLegBoneNames(Animator animator, Avatar avatar, float frameTime)
+	{
+		if (animator == null || avatar == null || !avatar.isHuman || frameTime >= 0)
+			return null;
+		var rv = new HashSet<string>();
+		foreach (var hb in footIKLegBones)
+		{
+			var bt = animator.GetBoneTransform(hb);
+			if (bt != null)
+				rv.Add(bt.name);
+		}
+		return rv;
+	}
+
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 	void BakeAnimationEvents(BlobBuilder bb, ref AnimationClipBlob acb, AnimationClip ac)
@@ -681,11 +746,17 @@ public partial class AnimationClipBaker
 		trackGroupNames.Clear();
 	#endif
 		
+		var footIKLegNames = GetFootIKLegBoneNames(animator, avatar, frameTime);
+
 		maxTrackKeyframeLength = 0u;
 		foreach (var b in bindings)
 		{
 			var ec = AnimationUtility.GetEditorCurve(ac, b);
 			var pb = ParseCurveBinding(ac, b, animator?.avatar);
+			//	Foot IK owns the leg chain — drop muscle curves for those bones so the baked
+			//	IK-corrected rotations (appended later) are the sole, clean source.
+			if (footIKLegNames != null && footIKLegNames.Contains(pb.boneName))
+				continue;
 			var inKeyframes = GetKeyFramesArray(ec, frameTime);
 			var keyFramesRange = CopyKeyFrames(inKeyframes, ref keyFramesList);
 			var trackData = CreateTrackData(keyFramesRange, pb);
