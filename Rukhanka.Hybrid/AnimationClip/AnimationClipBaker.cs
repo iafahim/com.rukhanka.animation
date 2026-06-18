@@ -488,25 +488,15 @@ public partial class AnimationClipBaker
 		
 		//	Modify bone hash to separate root motion tracks and ordinary tracks
 		rootBoneTransformData.Item2 = AnimationProcessSystem.ComputeBoneAnimationJob.ModifyBoneHashForRootMotion(rootBoneTransformData.Item2);
-
-		//	Unity humanoid Foot IK lowers the pelvis (body IK), not just the legs. For the foot-IK variant
-		//	capture the hips through the foot-IK graph (like the leg chain below) so the baked plant is firm;
-		//	otherwise the hips ride the non-IK height and the plant looks half-applied. entityRoot stays on the
-		//	normal sample path (foot IK does not move the root-motion node). Each bone is still written once.
-		var footIKActive = applyFootIK && anm.avatar != null && anm.avatar.isHuman && frameTime < 0;
-		if (!footIKActive)
-			trs.Add(rootBoneTransformData);
+		trs.Add(rootBoneTransformData);
 
 		SampleUnityAnimation(ac, anm, trs.ToArray(), true, frameTime);
-
-		if (footIKActive)
-			SampleUnityAnimation(ac, anm, new[] { rootBoneTransformData }, true, frameTime, true);
 
 		//	Bake the foot-IK-corrected leg chain (Unity humanoid "Foot IK"). These replace the
 		//	muscle leg curves skipped in BakeTrackSet, so they append fresh (no group override).
 		//	Gated on applyFootIK: when false the raw leg muscle curves were kept (GetFootIKLegBoneNames
 		//	returned null), so we must NOT append the IK-corrected legs or both would coexist.
-		if (footIKActive)
+		if (applyFootIK && anm.avatar != null && anm.avatar.isHuman && frameTime < 0)
 		{
 			var legTrs = new List<ValueTuple<Transform, uint>>();
 			foreach (var hb in footIKLegBones)
