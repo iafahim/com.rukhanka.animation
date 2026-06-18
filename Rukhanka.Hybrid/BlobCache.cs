@@ -26,11 +26,12 @@ dsssas    static readonly int BLOB_VERSION = 8;
     
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-    public static string ConstructCachedAnimationBlobPath(AnimationClip animationClip, Avatar avatar)
+    public static string ConstructCachedAnimationBlobPath(AnimationClip animationClip, Avatar avatar, bool applyFootIK = true)
     {
-        var animationHash = BakingUtils.ComputeAnimationHash(animationClip, avatar);
+        var animationHash = BakingUtils.ComputeAnimationHash(animationClip, avatar, applyFootIK);
         var avatarName = avatar != null ? avatar.name : "NO_AVATAR";
-        var cacheFileName = $"{animationClip.name}_{avatarName}_{animationHash}.blob";
+        var footIKSuffix = applyFootIK ? "" : "_noFootIK";
+        var cacheFileName = $"{animationClip.name}_{avatarName}{footIKSuffix}_{animationHash}.blob";
         cacheFileName = string.Join("_", cacheFileName.Split(Path.GetInvalidFileNameChars()));
         var cacheFilePath = $"{GetAnimationBlobCacheDirPath()}/{cacheFileName}";
         return cacheFilePath;
@@ -38,13 +39,13 @@ dsssas    static readonly int BLOB_VERSION = 8;
 
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-	public static BlobAssetReference<AnimationClipBlob> LoadBakedAnimationFromCache(AnimationClip animationClip, Avatar avatar)
+	public static BlobAssetReference<AnimationClipBlob> LoadBakedAnimationFromCache(AnimationClip animationClip, Avatar avatar, bool applyFootIK = true)
 	{
     #if RUKHANKA_NO_BLOB_CACHE
         var dummy = BLOB_VERSION;
         return default;
     #else
-		var cachedBlobPath = ConstructCachedAnimationBlobPath(animationClip, avatar);
+		var cachedBlobPath = ConstructCachedAnimationBlobPath(animationClip, avatar, applyFootIK);
         if (!File.Exists(cachedBlobPath))
             return default;
         
@@ -55,10 +56,10 @@ dsssas    static readonly int BLOB_VERSION = 8;
     
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-	public static void SaveBakedAnimationToCache(AnimationClip animationClip, Avatar avatar, BlobAssetReference<AnimationClipBlob> bar)
+	public static void SaveBakedAnimationToCache(AnimationClip animationClip, Avatar avatar, BlobAssetReference<AnimationClipBlob> bar, bool applyFootIK = true)
 	{
     #if !RUKHANKA_NO_BLOB_CACHE
-		var cachedBlobPath = ConstructCachedAnimationBlobPath(animationClip, avatar);
+		var cachedBlobPath = ConstructCachedAnimationBlobPath(animationClip, avatar, applyFootIK);
         Directory.CreateDirectory(GetAnimationBlobCacheDirPath());
         using (var writer = new StreamBinaryWriter(cachedBlobPath))
         {

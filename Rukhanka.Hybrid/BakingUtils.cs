@@ -55,6 +55,20 @@ public static class BakingUtils
         var rv = ComputeAnimationHash(animationAssetID, avatarAssetID);
         return rv;
     }
+
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+    //  Foot-IK variant of the animation hash. applyFootIK == true keeps the original (unsalted) hash so the
+    //  default foot-IK'd blob, its disk cache and the AnimatorController path are byte-for-byte unchanged.
+    //  applyFootIK == false is a genuinely different baked pose (raw leg-muscle curves, no foot planting), so
+    //  it must hash differently or it would alias the foot-IK'd blob of the same clip and silently win the cache.
+    public static Hash128 ComputeAnimationHash(AnimationClip animation, Avatar avatar, bool applyFootIK)
+    {
+        var rv = ComputeAnimationHash(animation, avatar);
+        if (!applyFootIK)
+            rv = new Hash128(rv.Value.x, rv.Value.y, rv.Value.z, rv.Value.w ^ 0xF007140Fu);
+        return rv;
+    }
     
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 

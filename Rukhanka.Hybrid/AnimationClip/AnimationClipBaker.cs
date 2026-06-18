@@ -467,7 +467,7 @@ public partial class AnimationClipBaker
 
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-	void SampleMissingCurves(AnimationClip ac, Animator anm, float frameTime)
+	void SampleMissingCurves(AnimationClip ac, Animator anm, float frameTime, bool applyFootIK = true)
 	{
 		var trs = new List<ValueTuple<Transform, uint>>();
 		var entityRootTransform = anm.transform;
@@ -494,7 +494,9 @@ public partial class AnimationClipBaker
 
 		//	Bake the foot-IK-corrected leg chain (Unity humanoid "Foot IK"). These replace the
 		//	muscle leg curves skipped in BakeTrackSet, so they append fresh (no group override).
-		if (anm.avatar != null && anm.avatar.isHuman && frameTime < 0)
+		//	Gated on applyFootIK: when false the raw leg muscle curves were kept (GetFootIKLegBoneNames
+		//	returned null), so we must NOT append the IK-corrected legs or both would coexist.
+		if (applyFootIK && anm.avatar != null && anm.avatar.isHuman && frameTime < 0)
 		{
 			var legTrs = new List<ValueTuple<Transform, uint>>();
 			foreach (var hb in footIKLegBones)
@@ -517,9 +519,9 @@ public partial class AnimationClipBaker
 	};
 
 	//	Bones whose muscle curves Foot IK will replace this bake (humanoid main clip only).
-	HashSet<string> GetFootIKLegBoneNames(Animator animator, Avatar avatar, float frameTime)
+	HashSet<string> GetFootIKLegBoneNames(Animator animator, Avatar avatar, float frameTime, bool applyFootIK = true)
 	{
-		if (animator == null || avatar == null || !avatar.isHuman || frameTime >= 0)
+		if (!applyFootIK || animator == null || avatar == null || !avatar.isHuman || frameTime >= 0)
 			return null;
 		var rv = new HashSet<string>();
 		foreach (var hb in footIKLegBones)
@@ -582,7 +584,7 @@ public partial class AnimationClipBaker
 
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-	int BuildAnimationBakeList(IBaker baker, AnimationClip[] animationClips, Avatar avatar, out NativeArray<BlobAssetReference<AnimationClipBlob>> alreadyBakedList)
+	int BuildAnimationBakeList(IBaker baker, AnimationClip[] animationClips, Avatar avatar, bool applyFootIK, out NativeArray<BlobAssetReference<AnimationClipBlob>> alreadyBakedList)
 	{
 		alreadyBakedList = new (animationClips.Length, Allocator.Temp);
 		var rv = 0;
@@ -593,12 +595,12 @@ public partial class AnimationClipBaker
 				continue;
 			
 			//	Check for blob asset store first
-			var animationHash = BakingUtils.ComputeAnimationHash(ac, avatar);
+			var animationHash = BakingUtils.ComputeAnimationHash(ac, avatar, applyFootIK);
 			var isAnimationExists = baker.TryGetBlobAssetReference<AnimationClipBlob>(animationHash, out var acb);
 			if (!isAnimationExists)
 			{
 				//	Try cached baked animation
-				acb = BlobCache.LoadBakedAnimationFromCache(ac, avatar);
+				acb = BlobCache.LoadBakedAnimationFromCache(ac, avatar, applyFootIK);
 				if (acb == BlobAssetReference<AnimationClipBlob>.Null)
 				{
 					rv += 1;
@@ -619,15 +621,17 @@ public partial class AnimationClipBaker
 
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-	public NativeArray<BlobAssetReference<AnimationClipBlob>> BakeAnimations(IBaker baker, AnimationClip[] animationClips, Avatar avatar, GameObject animatedObjectRoot)
+	//	applyFootIK == true (default) preserves the original unconditional Unity foot-IK bake. Pass false to bake a
+	//	raw-leg-curve variant (no foot planting) under a distinct hash; see ComputeAnimationHash(clip, avatar, bool).
+	public NativeArray<BlobAssetReference<AnimationClipBlob>> BakeAnimations(IBaker baker, AnimationClip[] animationClips, Avatar avatar, GameObject animatedObjectRoot, bool applyFootIK = true)
 	{
 		if (animationClips == null || animationClips.Length == 0)
 			return default;
-		
+
 		animationClips = Deduplicate(animationClips);
-		
+
 		//	Firstly create list of animations that need to be baked (not present in cache and in not in blob asset store)
-		var numClipsToBake = BuildAnimationBakeList(baker, animationClips, avatar, out var alreadyBakedAnimations);
+		var numClipsToBake = BuildAnimationBakeList(baker, animationClips, avatar, applyFootIK, out var alreadyBakedAnimations);
 		
 		//	If nothing to bake, just return already baked list
 		if (numClipsToBake == 0)
@@ -655,11 +659,11 @@ public partial class AnimationClipBaker
 			if (clipBlob != BlobAssetReference<AnimationClipBlob>.Null)
 				continue;
 			
-			var animationHash = BakingUtils.ComputeAnimationHash(a, avatar);
+			var animationHash = BakingUtils.ComputeAnimationHash(a, avatar, applyFootIK);
 			var isAnimationExists = baker.TryGetBlobAssetReference(animationHash, out clipBlob);
 			if (!isAnimationExists)
 			{
-				clipBlob = CreateAnimationBlobAsset(a, animatorCopy, animationHash);
+				clipBlob = CreateAnimationBlobAsset(a, animatorCopy, animationHash, applyFootIK);
 				baker.AddBlobAssetWithCustomHash(ref clipBlob, animationHash);
 			}
 			else
@@ -679,7 +683,7 @@ public partial class AnimationClipBaker
 
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-	public BlobAssetReference<AnimationClipBlob> CreateAnimationBlobAsset(AnimationClip ac, Animator animator, Hash128 animationHash)
+	public BlobAssetReference<AnimationClipBlob> CreateAnimationBlobAsset(AnimationClip ac, Animator animator, Hash128 animationHash, bool applyFootIK = true)
 	{
 		var avatar = animator?.avatar;
 		var acSettings = AnimationUtility.GetAnimationClipSettings(ac);
@@ -700,9 +704,9 @@ public partial class AnimationClipBaker
 		rv.cycleOffset = acSettings.cycleOffset;
 
 		BakeAnimationEvents(bb, ref rv, ac);
-		BakeTrackSet(bb, ref rv.clipTracks, out var maxTrackKeyframeLength, -1, ac, animator, avatar);
+		BakeTrackSet(bb, ref rv.clipTracks, out var maxTrackKeyframeLength, -1, ac, animator, avatar, applyFootIK);
 		if (acSettings.additiveReferencePoseClip != null)
-			BakeTrackSet(bb, ref rv.additiveReferencePoseFrame, out _, acSettings.additiveReferencePoseTime, acSettings.additiveReferencePoseClip, animator, avatar);
+			BakeTrackSet(bb, ref rv.additiveReferencePoseFrame, out _, acSettings.additiveReferencePoseTime, acSettings.additiveReferencePoseClip, animator, avatar, applyFootIK);
 
 	#if RUKHANKA_DEBUG_INFO
 		var dt = Time.realtimeSinceStartupAsDouble - startTimeMarker;
@@ -713,7 +717,7 @@ public partial class AnimationClipBaker
 		var bar = bb.CreateBlobAssetReference<AnimationClipBlob>(Allocator.Persistent);
 		
 		//	Save baked animation into cache
-		BlobCache.SaveBakedAnimationToCache(ac, avatar, bar);
+		BlobCache.SaveBakedAnimationToCache(ac, avatar, bar, applyFootIK);
 		
 		return bar;
 	}
@@ -734,7 +738,7 @@ public partial class AnimationClipBaker
 
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-	void BakeTrackSet(BlobBuilder bb, ref TrackSet outTrackSet, out uint maxTrackKeyframeLength, float frameTime, AnimationClip ac, Animator animator, Avatar avatar)
+	void BakeTrackSet(BlobBuilder bb, ref TrackSet outTrackSet, out uint maxTrackKeyframeLength, float frameTime, AnimationClip ac, Animator animator, Avatar avatar, bool applyFootIK = true)
 	{
 		var bindings = AnimationUtility.GetCurveBindings(ac);
 
@@ -746,7 +750,7 @@ public partial class AnimationClipBaker
 		trackGroupNames.Clear();
 	#endif
 		
-		var footIKLegNames = GetFootIKLegBoneNames(animator, avatar, frameTime);
+		var footIKLegNames = GetFootIKLegBoneNames(animator, avatar, frameTime, applyFootIK);
 
 		maxTrackKeyframeLength = 0u;
 		foreach (var b in bindings)
@@ -768,7 +772,7 @@ public partial class AnimationClipBaker
 		if (avatar != null)
 		{
 			//	Sample root and hips curves and from unity animations. Maybe sometime I will figure out all RootT/RootQ and body pose generation formulas and this step could be replaced with generation.
-			SampleMissingCurves(ac, animator, frameTime);
+			SampleMissingCurves(ac, animator, frameTime, applyFootIK);
 		}
 		
 		// Create special end empty track group because track group tracks count is calculated as trackGroup[i + 1].trackCount - trackGroup[i].trackCount
