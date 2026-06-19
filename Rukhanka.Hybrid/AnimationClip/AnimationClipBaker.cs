@@ -512,12 +512,10 @@ public partial class AnimationClipBaker
 
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-	//	Toes included so Unity's foot-IK toe roll is captured too; rigs without toe bones skip cleanly
-	//	(GetBoneTransform returns null and both the drop-set and the capture guard on it).
 	static readonly HumanBodyBones[] footIKLegBones =
 	{
-		HumanBodyBones.LeftUpperLeg, HumanBodyBones.LeftLowerLeg, HumanBodyBones.LeftFoot, HumanBodyBones.LeftToes,
-		HumanBodyBones.RightUpperLeg, HumanBodyBones.RightLowerLeg, HumanBodyBones.RightFoot, HumanBodyBones.RightToes,
+		HumanBodyBones.LeftUpperLeg, HumanBodyBones.LeftLowerLeg, HumanBodyBones.LeftFoot,
+		HumanBodyBones.RightUpperLeg, HumanBodyBones.RightLowerLeg, HumanBodyBones.RightFoot,
 	};
 
 	//	Bones whose muscle curves Foot IK will replace this bake (humanoid main clip only).
