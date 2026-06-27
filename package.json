@@ -19,6 +19,11 @@
       "displayName": "Rukhanka Animation Samples",
       "description": "Contains sample scenes that show various features of Rukhanka Animation System",
       "path": "Samples~/Samples"
+    },
+    {
+      "displayName": "Ragdoll",
+      "description": "Editor tool that builds a DOTS-physics ragdoll on a humanoid Rukhanka rig.",
+      "path": "Samples~/Ragdoll"
     }
   ]
 }
